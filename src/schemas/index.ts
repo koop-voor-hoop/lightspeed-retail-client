@@ -12,6 +12,7 @@ export * from './item_customfield.schema';
 export * from './item_shop.schema';
 export * from './locale.schema';
 export * from './manufacturer.schema';
+export * from './quote.schema';
 export * from './session.schema';
 export * from './tag.schema';
 export * from './tax_class.schema';
