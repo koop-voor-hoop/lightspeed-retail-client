@@ -7,4 +7,5 @@ export * from './item_shop';
 export * from './locale';
 export * from './manufacturer';
 export * from './session';
+export * from './tag';
 export * from './vendor';
