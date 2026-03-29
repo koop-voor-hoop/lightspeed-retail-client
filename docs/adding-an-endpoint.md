@@ -21,7 +21,8 @@ Use this checklist whenever you add support for a new Lightspeed endpoint.
 ## 2. Scaffold new Endpoint
 
 1. Run `bun scaffold <endpoint>`
-2. Verify if there are no errors
+2. All required files will be created
+3. Verify if there are no errors
 
 ## 3. Create or Update Zod Schemas
 

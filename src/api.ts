@@ -65,7 +65,6 @@ export const requestJson = async <TSchema extends z.ZodType>(
   }
 
   const payload = await parseResponseJson(response);
-  console.log(payload);
   const parsed = schema.safeParse(payload);
   if (!parsed.success) {
     const issues = [];
