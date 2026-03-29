@@ -5,6 +5,7 @@
   "scripts": {
     "env": "bun run env.ts",
     "typecheck": "tsc --noEmit",
+    "scaffold": "bun run scaffold.ts",
     "check": "biome check",
     "check:fix": "biome check --fix"
   },

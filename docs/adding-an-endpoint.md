@@ -18,9 +18,14 @@ Use this checklist whenever you add support for a new Lightspeed endpoint.
 5. Record `load_relations` values if available.
 6. Copy sample response fields and required/optional behavior.
 
-## 2. Create or Update Zod Schemas
+## 2. Scaffold new Endpoint
 
-1. Add `src/schemas/<endpoint>.schema.ts`.
+1. Run `bun scaffold <endpoint>`
+2. Verify if there are no errors
+
+## 3. Create or Update Zod Schemas
+
+1. Update `src/schemas/<endpoint>.schema.ts`.
 2. Define reusable sub-schemas first (currency, nested objects, etc.).
 3. Define the core entity schema.
 4. Define response wrapper schemas:
@@ -34,9 +39,9 @@ Use this checklist whenever you add support for a new Lightspeed endpoint.
    - `oneOrMany`
 7. Export the new schema file from `src/schemas/index.ts`.
 
-## 3. Add Type Inference Layer
+## 4. Add Type Inference Layer
 
-1. Add or update `src/types/<endpoint>.ts`.
+1. Update `src/types/<endpoint>.ts`.
 2. Infer all public types from schemas with `z.infer`.
 3. Export key types, usually:
    - Entity type
@@ -45,9 +50,9 @@ Use this checklist whenever you add support for a new Lightspeed endpoint.
    - Mutation type
 4. Export the types file from `src/types/index.ts`.
 
-## 4. Implement Endpoint Functions
+## 5. Implement Endpoint Functions
 
-1. Add `src/endpoints/<endpoint>.ts`.
+1. Update `src/endpoints/<endpoint>.ts`.
 2. Import `requestJson` from `src/api.ts`.
 3. Import schemas and inferred types from `src/schemas` and `src/types`.
 4. Implement one function per supported action, for example:
@@ -63,14 +68,14 @@ Use this checklist whenever you add support for a new Lightspeed endpoint.
 6. Use descriptive JSDoc comments for each exported function.
 7. Export the endpoint from `src/endpoints/index.ts`.
 
-## 5. Update Shared API Types (Only If Needed)
+## 6. Update Shared API Types (Only If Needed)
 
 1. If the endpoint introduces new `load_relations`, add them to `RelationKey` in `src/types/api.types.ts`.
 2. If this changes query typing constraints, update `PaginationParams` usage for the endpoint.
 
-## 6. Add Integration Tests
+## 7. Add Integration Tests
 
-1. Add or update `tests/<endpoint>.test.ts`.
+1. Update `tests/<endpoint>.test.ts`.
 2. Follow existing test style:
    - Read `TEST_ACCESS_TOKEN` from environment.
    - Skip cleanly if token is missing.
@@ -80,7 +85,7 @@ Use this checklist whenever you add support for a new Lightspeed endpoint.
 4. Add at least one error-path test (invalid token, missing ID, non-existent ID).
 5. For account-scoped endpoints, resolve `accountID` from `getSession`.
 
-## 7. Validate and Fix
+## 8. Validate and Fix
 
 1. Run checks:
 
