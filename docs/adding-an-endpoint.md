@@ -95,20 +95,26 @@ bun run check
 bun run typecheck
 ```
 
+2. Fix issues
+
+```bash
+bun run check:fix
+```
+
 3. Refresh tokens in .env
 
 ```bash
 bun run env
 ```
 
-2. Run relevant tests:
+4. Run relevant tests:
 
 ```bash
 bun test tests/<endpoint>.test.ts
 ```
 
-3. Fix schema/type mismatches reported by runtime validation.
-4. Confirm exported symbols are available from `src/index.ts` through existing barrel exports.
+5. Fix schema/type mismatches reported by runtime validation.
+6. Confirm exported symbols are available from `src/index.ts` through existing barrel exports.
 
 ## 8. Final Verification Before Merge
 
