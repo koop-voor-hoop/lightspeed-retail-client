@@ -4,15 +4,13 @@ export type AccessToken = { accessToken: string };
 /** Unique integer identifier that represents a specific business account in the Lightspeed system. */
 export type AccountId = { accountID: string | number };
 
-export type PaginationParams<Relation extends RelationKey, SortField extends string> = {
+type PaginationBaseParams<SortField extends string> = {
   /** Used to paginate forward to subsequent pages. Values come from response payloads and should not be set directly. */
   after?: string;
   /** Used to paginate backward to previous pages. Values come from response payloads and should not be set directly. */
   before?: string;
   /** true will return both archived and non-archived results, false will return only non-archived results, and only will return only archived results. */
   archived?: 'true' | 'false' | 'only';
-  /** Used to request related records be returned as sub-records. The use of this parameter will increase the request cost for each relation loaded. */
-  load_relations?: Relations<Relation>;
   /** Restricts the maximum number of objects returned for each GET (query) request. Maximum limit is 100. */
   limit?: number;
   /**
@@ -34,6 +32,20 @@ export type PaginationParams<Relation extends RelationKey, SortField extends str
    */
   count?: never;
 };
+
+export type PaginationParams<
+  Relation extends RelationKey | never = never,
+  SortField extends string = string,
+> = PaginationBaseParams<SortField> &
+  ([Relation] extends [never]
+    ? {
+        /** Endpoints without supported relations cannot request related records. */
+        load_relations?: never;
+      }
+    : {
+        /** Used to request related records be returned as sub-records. The use of this parameter will increase the request cost for each relation loaded. */
+        load_relations?: Relations<Relation>;
+      });
 
 export type CountParams = {
   /** Used to paginate forward to subsequent pages. Values come from response payloads and should not be set directly. */
@@ -65,7 +77,7 @@ export type CountParams = {
 };
 
 /** Defines the valid query parameters that can be used for endpoints that support pagination and counting. */
-export type QueryParams<Relation extends RelationKey, SortField extends string = string> =
+export type QueryParams<Relation extends RelationKey | never = never, SortField extends string = string> =
   | PaginationParams<Relation, SortField>
   | CountParams;
 

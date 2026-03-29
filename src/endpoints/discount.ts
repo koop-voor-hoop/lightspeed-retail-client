@@ -9,7 +9,7 @@ import type {
   PaginationParams,
 } from '../types';
 
-type EndpointParams = Omit<PaginationParams<never, 'discountID' | 'timeStamp'>, 'load_relations'>;
+type EndpointParams = PaginationParams<never, 'discountID' | 'timeStamp'>;
 
 type DiscountId = { discountID: `${number}` | number };
 
