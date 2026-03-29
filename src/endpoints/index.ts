@@ -8,4 +8,5 @@ export * from './locale';
 export * from './manufacturer';
 export * from './session';
 export * from './tag';
+export * from './tax_class';
 export * from './vendor';

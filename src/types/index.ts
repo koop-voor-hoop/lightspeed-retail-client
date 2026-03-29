@@ -11,4 +11,5 @@ export * from './locale.types';
 export * from './manufacturer.types';
 export * from './session.types';
 export * from './tag.types';
+export * from './tax_class.types';
 export * from './vendor.types';

@@ -13,4 +13,5 @@ export * from './locale.schema';
 export * from './manufacturer.schema';
 export * from './session.schema';
 export * from './tag.schema';
+export * from './tax_class.schema';
 export * from './vendor.schema';
