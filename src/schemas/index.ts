@@ -7,5 +7,6 @@ export * from './error.schema';
 export * from './helper.schema';
 export * from './item_customfield.schema';
 export * from './item_shop.schema';
+export * from './manufacturer.schema';
 export * from './session.schema';
 export * from './vendor.schema';
