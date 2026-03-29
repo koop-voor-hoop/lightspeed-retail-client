@@ -1,4 +1,3 @@
-// export * from './item.schema';
 export * from './account.schema';
 export * from './attributes.schema';
 export * from './auth.schema';
@@ -7,8 +6,10 @@ export * from './discount.schema';
 export * from './employee_hours.schema';
 export * from './error.schema';
 export * from './helper.schema';
+export * from './item.schema';
 export * from './item_attribute_set.schema';
 export * from './item_customfield.schema';
+export * from './item_image.schema';
 export * from './item_shop.schema';
 export * from './locale.schema';
 export * from './manufacturer.schema';
