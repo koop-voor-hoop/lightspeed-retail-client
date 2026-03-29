@@ -4,5 +4,6 @@ export * from './auth.types';
 export * from './employee_hours.types';
 export * from './error.types';
 export * from './item_customfield.types';
+export * from './item_shop.types';
 export * from './session.types';
 export * from './vendor.types';
