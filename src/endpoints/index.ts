@@ -1,4 +1,5 @@
 export * from './account';
+export * from './category';
 export * from './discount';
 export * from './employee_hours';
 export * from './item_customfield';

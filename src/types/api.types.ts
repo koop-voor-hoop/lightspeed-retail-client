@@ -100,6 +100,7 @@ export type RequestJsonInit = RequestInit & {
  */
 export type RelationKey =
   | 'Contact'
+  | 'Parent'
   | 'Category'
   | 'TaxClass'
   | 'ItemAttributes'
