@@ -2,6 +2,7 @@ export * from './account';
 export * from './category';
 export * from './discount';
 export * from './employee_hours';
+export * from './item_attribute_set';
 export * from './item_customfield';
 export * from './item_shop';
 export * from './locale';

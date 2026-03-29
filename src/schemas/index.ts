@@ -7,6 +7,7 @@ export * from './discount.schema';
 export * from './employee_hours.schema';
 export * from './error.schema';
 export * from './helper.schema';
+export * from './item_attribute_set.schema';
 export * from './item_customfield.schema';
 export * from './item_shop.schema';
 export * from './locale.schema';

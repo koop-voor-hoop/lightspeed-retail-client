@@ -5,6 +5,7 @@ export * from './category.types';
 export * from './discount.types';
 export * from './employee_hours.types';
 export * from './error.types';
+export * from './item_attribute_set.types';
 export * from './item_customfield.types';
 export * from './item_shop.types';
 export * from './locale.types';
