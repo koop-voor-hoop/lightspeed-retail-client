@@ -2,6 +2,7 @@
 export * from './account.schema';
 export * from './attributes.schema';
 export * from './auth.schema';
+export * from './employee_hours.schema';
 export * from './error.schema';
 export * from './helper.schema';
 export * from './item_customfield.schema';
