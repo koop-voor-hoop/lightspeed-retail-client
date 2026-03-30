@@ -5,6 +5,24 @@ let accessToken: string | undefined;
 let accountID: string | undefined;
 
 describe('item read - Integration Tests', () => {
+  const itemRelations = [
+    'TaxClass',
+    'ItemAttributes',
+    'ItemAttributes.ItemAttributeSet',
+    'Manufacturer',
+    'Note',
+    'Images',
+    'ItemShops',
+    'ItemVendorNums',
+    'ItemComponents',
+    'ItemECommerce',
+    'TagRelations',
+    'TagRelations.Tag',
+    'CustomFieldValues',
+    'CustomFieldValues.value',
+    'ItemPrices',
+  ] as const;
+
   beforeAll(async () => {
     accessToken = Bun.env.TEST_ACCESS_TOKEN;
 
@@ -41,6 +59,45 @@ describe('item read - Integration Tests', () => {
       limit: 10,
       sort: 'itemID',
       load_relations: ['Category'],
+    });
+
+    expect(response).toBeDefined();
+  });
+
+  for (const relation of itemRelations) {
+    it(`should support loading ${relation} relation`, async () => {
+      const response = await getItems({
+        accessToken: accessToken!,
+        accountID: accountID!,
+        limit: 10,
+        sort: 'itemID',
+        load_relations: [relation],
+      });
+
+      expect(response).toBeDefined();
+      expect(response.Item === undefined || Array.isArray(response.Item) || !!response.Item).toBe(true);
+    });
+  }
+
+  it('should support loading multiple item relations in one request', async () => {
+    const response = await getItems({
+      accessToken: accessToken!,
+      accountID: accountID!,
+      limit: 10,
+      sort: 'itemID',
+      load_relations: ['Category', 'TaxClass', 'ItemShops', 'ItemPrices', 'Images'],
+    });
+
+    expect(response).toBeDefined();
+  });
+
+  it('should support loading nested item relations in one request', async () => {
+    const response = await getItems({
+      accessToken: accessToken!,
+      accountID: accountID!,
+      limit: 10,
+      sort: 'itemID',
+      load_relations: ['ItemAttributes.ItemAttributeSet', 'TagRelations.Tag', 'CustomFieldValues.value'],
     });
 
     expect(response).toBeDefined();
