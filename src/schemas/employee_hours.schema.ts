@@ -1,6 +1,5 @@
 import z from 'zod';
-import { attributesSchema } from './attributes.schema';
-import { integerLikeSchema, oneOrMany } from './helper.schema';
+import { attributesSchema, integerLikeSchema, oneOrMany } from '.';
 
 export const employeeHoursSchema = z.object({
   employeeHoursID: integerLikeSchema,

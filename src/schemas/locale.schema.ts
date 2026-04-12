@@ -1,6 +1,5 @@
 import z from 'zod';
-import { attributesSchema } from './attributes.schema';
-import { booleanLikeSchema, numberLikeSchema, oneOrMany } from './helper.schema';
+import { attributesSchema, booleanLikeSchema, numberLikeSchema, oneOrMany } from '.';
 
 export const currencyDenominationSchema = z.object({
   name: z.string(),

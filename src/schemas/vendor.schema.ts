@@ -1,5 +1,12 @@
 import z from 'zod';
-import { attributesSchema, booleanLikeSchema, integerLikeSchema, numberLikeSchema, oneOrMany } from '.';
+import {
+  attributesSchema,
+  booleanLikeSchema,
+  integerLikeSchema,
+  numberLikeSchema,
+  oneOrMany,
+  unknownRelationSchema,
+} from '.';
 
 export const vendorPurchasingCurrencySchema = z.object({
   code: z.string(),
@@ -19,7 +26,7 @@ export const vendorSchema = z.object({
   shareSellThrough: booleanLikeSchema.optional(),
   timeStamp: z.string().optional(),
   b2bSellerUID: z.string().optional(),
-  Contact: z.record(z.string(), z.unknown()).optional(),
+  Contact: unknownRelationSchema.optional(),
   Reps: z.unknown().optional(),
   purchasingCurrency: vendorPurchasingCurrencySchema.optional(),
 });
@@ -43,6 +50,6 @@ export const vendorMutationSchema = z.object({
   updateDescription: booleanLikeSchema.optional(),
   shareSellThrough: booleanLikeSchema.optional(),
   b2bSellerUID: z.string().optional(),
-  Contact: z.record(z.string(), z.unknown()).optional(),
+  Contact: unknownRelationSchema.optional(),
   Reps: z.unknown().optional(),
 });

@@ -1,6 +1,5 @@
 import z from 'zod';
-import { attributesSchema } from './attributes.schema';
-import { booleanLikeSchema, integerLikeSchema, numberLikeSchema, oneOrMany } from './helper.schema';
+import { attributesSchema, booleanLikeSchema, integerLikeSchema, numberLikeSchema, oneOrMany } from '.';
 
 export const discountSchema = z.object({
   discountID: integerLikeSchema,

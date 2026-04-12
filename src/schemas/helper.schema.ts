@@ -21,6 +21,8 @@ export const booleanLikeSchema = z.union([
   z.enum(['true', 'false']).transform((value) => value === 'true'),
 ]);
 
+export const unknownRelationSchema = z.record(z.string(), z.unknown());
+
 export const oneOrMany = <TSchema extends z.ZodTypeAny>(schema: TSchema) => {
   return z.union([schema.transform((value) => [value]), z.array(schema)]);
 };
