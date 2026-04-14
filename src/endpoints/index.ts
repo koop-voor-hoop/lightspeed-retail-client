@@ -15,6 +15,7 @@ export * from './paymenttype';
 export * from './pricelevel';
 export * from './processingfee';
 export * from './quote';
+export * from './season';
 export * from './session';
 export * from './tag';
 export * from './tax_class';
