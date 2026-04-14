@@ -4,6 +4,7 @@ export * from './creditaccount';
 export * from './currencyrate';
 export * from './discount';
 export * from './employee_hours';
+export * from './industry';
 export * from './item';
 export * from './item_attribute_set';
 export * from './item_customfield';
