@@ -11,6 +11,7 @@ export * from './item_image';
 export * from './item_shop';
 export * from './locale';
 export * from './manufacturer';
+export * from './paymenttype';
 export * from './pricelevel';
 export * from './quote';
 export * from './session';
