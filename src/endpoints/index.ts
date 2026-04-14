@@ -13,6 +13,7 @@ export * from './locale';
 export * from './manufacturer';
 export * from './paymenttype';
 export * from './pricelevel';
+export * from './processingfee';
 export * from './quote';
 export * from './session';
 export * from './tag';
