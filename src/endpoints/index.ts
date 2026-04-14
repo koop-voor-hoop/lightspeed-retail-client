@@ -1,5 +1,7 @@
 export * from './account';
 export * from './category';
+export * from './creditaccount';
+export * from './currencyrate';
 export * from './discount';
 export * from './employee_hours';
 export * from './item';
