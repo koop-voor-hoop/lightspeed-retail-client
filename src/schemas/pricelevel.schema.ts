@@ -3,7 +3,7 @@ import { attributesSchema, booleanLikeSchema, integerLikeSchema, oneOrMany } fro
 
 const optionalCalculationSchema = z.preprocess(
   (value) => (value === '' ? undefined : value),
-  z.unknown().optional(),
+  z.any().optional(),
 );
 
 export const priceLevelSchema = z.object({

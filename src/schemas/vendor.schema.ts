@@ -27,7 +27,7 @@ export const vendorSchema = z.object({
   timeStamp: z.string().optional(),
   b2bSellerUID: z.string().optional(),
   Contact: unknownRelationSchema.optional(),
-  Reps: z.unknown().optional(),
+  Reps: z.any().optional(),
   purchasingCurrency: vendorPurchasingCurrencySchema.optional(),
 });
 
@@ -51,5 +51,5 @@ export const vendorMutationSchema = z.object({
   shareSellThrough: booleanLikeSchema.optional(),
   b2bSellerUID: z.string().optional(),
   Contact: unknownRelationSchema.optional(),
-  Reps: z.unknown().optional(),
+  Reps: z.any().optional(),
 });

@@ -55,7 +55,7 @@ export const itemCustomFieldSchema = z
     uom: z.string().optional(),
     decimalPrecision: integerLikeSchema.optional(),
     archived: booleanLikeSchema.optional(),
-    default: z.unknown().optional(),
+    default: z.any().optional(),
   })
   .passthrough();
 
@@ -75,5 +75,5 @@ export const itemCustomFieldMutationSchema = z.object({
   uom: z.string().optional(),
   decimalPrecision: integerLikeSchema.optional(),
   archived: booleanLikeSchema.optional(),
-  default: z.unknown().optional(),
+  default: z.any().optional(),
 });

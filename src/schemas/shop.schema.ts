@@ -30,7 +30,7 @@ const optionalUnknownRelationSchema = z.preprocess(
 
 const optionalUnknownSchema = z.preprocess(
   (value) => (value === '' ? undefined : value),
-  z.unknown().optional(),
+  z.any().optional(),
 );
 
 export const shopSchema = z.object({
