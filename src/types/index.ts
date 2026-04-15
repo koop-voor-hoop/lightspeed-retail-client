@@ -7,6 +7,7 @@ export * from './currencyrate.types';
 export * from './discount.types';
 export * from './employee_hours.types';
 export * from './error.types';
+export * from './image.types';
 export * from './industry.types';
 export * from './item.types';
 export * from './item_attribute_set.types';

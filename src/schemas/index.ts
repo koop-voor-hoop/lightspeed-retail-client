@@ -8,6 +8,7 @@ export * from './discount.schema';
 export * from './employee_hours.schema';
 export * from './error.schema';
 export * from './helper.schema';
+export * from './image.schema';
 export * from './industry.schema';
 export * from './item.schema';
 export * from './item_attribute_set.schema';
