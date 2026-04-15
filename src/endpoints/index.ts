@@ -18,6 +18,7 @@ export * from './processingfee';
 export * from './quote';
 export * from './season';
 export * from './session';
+export * from './shop';
 export * from './tag';
 export * from './tax_class';
 export * from './vendor';
