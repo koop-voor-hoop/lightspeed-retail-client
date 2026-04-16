@@ -1,5 +1,6 @@
 import z from 'zod';
-import { attributesSchema, integerLikeSchema, oneOrMany } from '.';
+import { attributesSchema } from './attributes.schema';
+import { integerLikeSchema, oneOrMany } from './helper.schema';
 
 export const tagSchema = z.object({
   tagID: integerLikeSchema,

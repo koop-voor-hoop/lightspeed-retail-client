@@ -1,5 +1,5 @@
 import z from 'zod';
-import { booleanLikeSchema } from '.';
+import { booleanLikeSchema } from './helper.schema';
 
 export const employeeSchema = z.object({
   employeeID: z.string(),

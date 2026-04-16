@@ -1,5 +1,6 @@
 import z from 'zod';
-import { attributesSchema, booleanLikeSchema, integerLikeSchema, oneOrMany } from '.';
+import { attributesSchema } from './attributes.schema';
+import { booleanLikeSchema, integerLikeSchema, oneOrMany } from './helper.schema';
 
 const optionalCalculationSchema = z.preprocess(
   (value) => (value === '' ? undefined : value),

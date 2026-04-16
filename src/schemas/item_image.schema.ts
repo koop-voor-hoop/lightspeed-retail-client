@@ -1,5 +1,6 @@
 import z from 'zod';
-import { attributesSchema, integerLikeSchema, oneOrMany, unknownRelationSchema } from '.';
+import { attributesSchema } from './attributes.schema';
+import { integerLikeSchema, oneOrMany, unknownRelationSchema } from './helper.schema';
 
 export const itemImageSchema = z.object({
   imageID: integerLikeSchema,

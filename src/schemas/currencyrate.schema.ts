@@ -1,5 +1,6 @@
 import z from 'zod';
-import { attributesSchema, integerLikeSchema, numberLikeSchema, oneOrMany } from '.';
+import { attributesSchema } from './attributes.schema';
+import { integerLikeSchema, numberLikeSchema, oneOrMany } from './helper.schema';
 
 export const currencyRateSchema = z.object({
   currencyRateID: integerLikeSchema,

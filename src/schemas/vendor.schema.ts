@@ -1,12 +1,12 @@
 import z from 'zod';
+import { attributesSchema } from './attributes.schema';
 import {
-  attributesSchema,
   booleanLikeSchema,
   integerLikeSchema,
   numberLikeSchema,
   oneOrMany,
   unknownRelationSchema,
-} from '.';
+} from './helper.schema';
 
 export const vendorPurchasingCurrencySchema = z.object({
   code: z.string(),
