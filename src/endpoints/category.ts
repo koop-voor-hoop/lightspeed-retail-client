@@ -11,6 +11,8 @@ import type {
 
 type EndpointParams = PaginationParams<'Parent', 'categoryID' | 'timeStamp' | 'leftNode' | 'rightNode'>;
 
+type RelationParams = Pick<EndpointParams, 'load_relations'>;
+
 type CategoryId = { categoryID: `${number}` | number };
 
 /** Lists categories with optional pagination, sorting, and relation-loading parameters. */
@@ -34,11 +36,13 @@ export const getCategory = async ({
   accessToken,
   accountID,
   categoryID,
-}: AccessToken & AccountId & CategoryId): Promise<CategoryResponse> => {
+  ...params
+}: AccessToken & AccountId & CategoryId & RelationParams): Promise<CategoryResponse> => {
   return requestJson(
     `Account/${accountID}/Category/${categoryID}.json`,
     {
       accessToken,
+      params,
     },
     categoryResponseSchema,
   );

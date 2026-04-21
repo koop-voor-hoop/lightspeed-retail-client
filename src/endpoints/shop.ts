@@ -14,6 +14,8 @@ type EndpointParams = PaginationParams<
   'shopID' | 'timeStamp'
 >;
 
+type RelationParams = Pick<EndpointParams, 'load_relations'>;
+
 type ShopId = { shopID: `${number}` | number };
 
 /** Lists shops with optional pagination and relation-loading parameters. */
@@ -37,11 +39,13 @@ export const getShop = async ({
   accessToken,
   accountID,
   shopID,
-}: AccessToken & AccountId & ShopId): Promise<ShopResponse> => {
+  ...params
+}: AccessToken & AccountId & ShopId & RelationParams): Promise<ShopResponse> => {
   return requestJson(
     `Account/${accountID}/Shop/${shopID}.json`,
     {
       accessToken,
+      params,
     },
     shopResponseSchema,
   );

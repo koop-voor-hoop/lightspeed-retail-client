@@ -18,6 +18,8 @@ type EndpointParams = PaginationParams<
   code?: string;
 };
 
+type RelationParams = Pick<EndpointParams, 'load_relations'>;
+
 type CreditAccountId = { creditAccountID: `${number}` | number };
 
 /** Lists credit accounts with optional pagination, relation-loading, and filtering parameters. */
@@ -41,11 +43,13 @@ export const getCreditAccount = async ({
   accessToken,
   accountID,
   creditAccountID,
-}: AccessToken & AccountId & CreditAccountId): Promise<CreditAccountResponse> => {
+  ...params
+}: AccessToken & AccountId & CreditAccountId & RelationParams): Promise<CreditAccountResponse> => {
   return requestJson(
     `Account/${accountID}/CreditAccount/${creditAccountID}.json`,
     {
       accessToken,
+      params,
     },
     creditAccountResponseSchema,
   );

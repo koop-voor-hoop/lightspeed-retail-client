@@ -11,6 +11,8 @@ import type {
 
 type EndpointParams = PaginationParams<'Item' | 'ItemMatrix', 'imageID'>;
 
+type RelationParams = Pick<EndpointParams, 'load_relations'>;
+
 type ImageId = { imageID: `${number}` | number };
 type IntegerId = `${number}` | number;
 
@@ -52,11 +54,13 @@ export const getImage = async ({
   accessToken,
   accountID,
   imageID,
-}: AccessToken & AccountId & ImageId): Promise<ImageResponse> => {
+  ...params
+}: AccessToken & AccountId & ImageId & RelationParams): Promise<ImageResponse> => {
   return requestJson(
     `Account/${accountID}/Image/${imageID}.json`,
     {
       accessToken,
+      params,
     },
     imageResponseSchema,
   );

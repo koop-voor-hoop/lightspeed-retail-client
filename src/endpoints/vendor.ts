@@ -11,6 +11,8 @@ import type {
 
 type EndpointParams = PaginationParams<'Contact', 'vendorID' | 'timeStamp' | 'name'>;
 
+type RelationParams = Pick<EndpointParams, 'load_relations'>;
+
 type VendorId = { vendorID: `${number}` | number };
 
 /** Lists vendors with optional pagination and relation-loading parameters. */
@@ -34,11 +36,13 @@ export const getVendor = async ({
   accessToken,
   accountID,
   vendorID,
-}: AccessToken & AccountId & VendorId): Promise<VendorResponse> => {
+  ...params
+}: AccessToken & AccountId & VendorId & RelationParams): Promise<VendorResponse> => {
   return requestJson(
     `Account/${accountID}/Vendor/${vendorID}.json`,
     {
       accessToken,
+      params,
     },
     vendorResponseSchema,
   );

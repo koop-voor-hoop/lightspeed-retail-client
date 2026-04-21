@@ -29,6 +29,8 @@ type EndpointParams = PaginationParams<
   'itemID' | 'timeStamp' | 'description'
 >;
 
+type RelationParams = Pick<EndpointParams, 'load_relations'>;
+
 type ItemId = { itemID: `${number}` | number };
 
 /** Lists items with optional relation loading, sorting, and pagination. */
@@ -52,11 +54,13 @@ export const getItem = async ({
   accessToken,
   accountID,
   itemID,
-}: AccessToken & AccountId & ItemId): Promise<ItemResponse> => {
+  ...params
+}: AccessToken & AccountId & ItemId & RelationParams): Promise<ItemResponse> => {
   return requestJson(
     `Account/${accountID}/Item/${itemID}.json`,
     {
       accessToken,
+      params,
     },
     itemResponseSchema,
   );
