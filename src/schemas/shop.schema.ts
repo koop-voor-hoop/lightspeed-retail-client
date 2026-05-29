@@ -33,6 +33,11 @@ const optionalUnknownSchema = z.preprocess(
   z.any().optional(),
 );
 
+const optionalGatewayConfigIdSchema = z.preprocess(
+  (value) => (value === '' ? undefined : value),
+  z.union([integerLikeSchema, z.uuid()]).optional(),
+);
+
 export const shopSchema = z.object({
   shopID: integerLikeSchema,
   name: z.string(),
@@ -50,7 +55,7 @@ export const shopSchema = z.object({
   taxCategoryID: optionalIntegerLikeSchema,
   receiptSetupID: optionalIntegerLikeSchema,
   ccGatewayID: optionalIntegerLikeSchema,
-  gatewayConfigID: optionalIntegerLikeSchema,
+  gatewayConfigID: optionalGatewayConfigIdSchema,
   priceLevelID: optionalIntegerLikeSchema,
   Contact: optionalUnknownRelationSchema,
   ReceiptSetup: optionalUnknownRelationSchema,
