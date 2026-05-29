@@ -134,9 +134,11 @@ describe('item read - Integration Tests', () => {
       accessToken: accessToken!,
       accountID: accountID!,
       itemID,
+      load_relations: ['Category'],
     });
 
     expect(itemResponse.Item.itemID).toBe(itemID);
+    expect(itemResponse.Item.Category === undefined || !!itemResponse.Item.Category).toBe(true);
   });
 
   it('should fail gracefully for a non-existent item id', async () => {

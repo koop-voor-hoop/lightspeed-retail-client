@@ -43,3 +43,20 @@ export const itemShopMutationSchema = z.object({
   reorderPoint: integerLikeSchema.optional(),
   reorderLevel: integerLikeSchema.optional(),
 });
+
+/** Partial ItemShop payload nested under Item PUT (itemShopID or shopID required). */
+export const itemShopInItemMutationSchema = z
+  .object({
+    itemShopID: integerLikeSchema.optional(),
+    shopID: integerLikeSchema.optional(),
+    qoh: integerLikeSchema.optional(),
+    reorderPoint: integerLikeSchema.optional(),
+    reorderLevel: integerLikeSchema.optional(),
+  })
+  .refine((data) => data.itemShopID != null || data.shopID != null, {
+    message: 'Either itemShopID or shopID is required',
+  });
+
+export const itemShopsInItemMutationSchema = z.object({
+  ItemShop: oneOrMany(itemShopInItemMutationSchema).optional(),
+});

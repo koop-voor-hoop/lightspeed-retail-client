@@ -11,7 +11,7 @@ import {
 import { itemAttributeSetSchema } from './item_attribute_set.schema';
 import { itemCustomFieldValueSchema } from './item_customfield.schema';
 import { itemImageSchema } from './item_image.schema';
-import { itemShopSchema } from './item_shop.schema';
+import { itemShopSchema, itemShopsInItemMutationSchema } from './item_shop.schema';
 import { manufacturerSchema } from './manufacturer.schema';
 import { tagSchema } from './tag.schema';
 import { taxClassSchema } from './tax_class.schema';
@@ -184,7 +184,7 @@ export const itemMutationSchema = z.object({
   seasonID: integerLikeSchema.optional(),
   defaultVendorID: integerLikeSchema.optional(),
   Prices: itemPricesSchema.optional(),
-  ItemShops: itemShopsSchema.optional(),
+  ItemShops: itemShopsInItemMutationSchema.optional(),
   Category: categorySchema.optional(),
   TaxClass: taxClassSchema.optional(),
   ItemAttributes: itemAttributesSchema.optional(),
