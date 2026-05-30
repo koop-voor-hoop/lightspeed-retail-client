@@ -24,6 +24,8 @@ export * from './paymenttype.types';
 export * from './pricelevel.types';
 export * from './processingfee.types';
 export * from './quote.types';
+export * from './register.types';
+export * from './sale.types';
 export * from './season.types';
 export * from './session.types';
 export * from './shop.types';

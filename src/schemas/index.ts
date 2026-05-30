@@ -25,6 +25,8 @@ export * from './paymenttype.schema';
 export * from './pricelevel.schema';
 export * from './processingfee.schema';
 export * from './quote.schema';
+export * from './register.schema';
+export * from './sale.schema';
 export * from './season.schema';
 export * from './session.schema';
 export * from './shop.schema';

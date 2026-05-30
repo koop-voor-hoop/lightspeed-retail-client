@@ -21,6 +21,8 @@ export * from './paymenttype';
 export * from './pricelevel';
 export * from './processingfee';
 export * from './quote';
+export * from './register';
+export * from './sale';
 export * from './season';
 export * from './session';
 export * from './shop';

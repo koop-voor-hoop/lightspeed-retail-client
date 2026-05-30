@@ -28,10 +28,7 @@ const optionalUnknownRelationSchema = z.preprocess(
   unknownRelationSchema.optional(),
 );
 
-const optionalUnknownSchema = z.preprocess(
-  (value) => (value === '' ? undefined : value),
-  z.any().optional(),
-);
+const optionalUnknownSchema = z.preprocess((value) => (value === '' ? undefined : value), z.any().optional());
 
 const optionalGatewayConfigIdSchema = z.preprocess(
   (value) => (value === '' ? undefined : value),
