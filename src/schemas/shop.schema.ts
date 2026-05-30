@@ -88,6 +88,7 @@ export const shopMutationSchema = z.object({
   taxLabor: booleanLikeSchema.optional(),
   labelTitle: z.string().optional(),
   labelMsrp: booleanLikeSchema.optional(),
+  archived: booleanLikeSchema.optional(),
   contactID: integerLikeSchema.optional(),
   taxCategoryID: integerLikeSchema.optional(),
   receiptSetupID: integerLikeSchema.optional(),
