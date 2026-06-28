@@ -14,6 +14,8 @@ export * from './item';
 export * from './item_attribute_set';
 export * from './item_customfield';
 export * from './item_image';
+export * from './item_matrix';
+export * from './item_matrix_image';
 export * from './item_shop';
 export * from './locale';
 export * from './manufacturer';

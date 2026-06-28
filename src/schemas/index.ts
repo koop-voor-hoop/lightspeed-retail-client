@@ -18,6 +18,7 @@ export * from './item.schema';
 export * from './item_attribute_set.schema';
 export * from './item_customfield.schema';
 export * from './item_image.schema';
+export * from './item_matrix.schema';
 export * from './item_shop.schema';
 export * from './locale.schema';
 export * from './manufacturer.schema';

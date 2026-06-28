@@ -1,5 +1,6 @@
 import type z from 'zod';
 import type {
+  itemAttributeSetMutationSchema,
   itemAttributeSetResponseSchema,
   itemAttributeSetSchema,
   itemAttributeSetsResponseSchema,
@@ -8,3 +9,4 @@ import type {
 export type ItemAttributeSet = z.infer<typeof itemAttributeSetSchema>;
 export type ItemAttributeSetResponse = z.infer<typeof itemAttributeSetResponseSchema>;
 export type ItemAttributeSetsResponse = z.infer<typeof itemAttributeSetsResponseSchema>;
+export type ItemAttributeSetMutation = z.infer<typeof itemAttributeSetMutationSchema>;

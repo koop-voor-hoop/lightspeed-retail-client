@@ -3,6 +3,7 @@ import { itemAttributeSetResponseSchema, itemAttributeSetsResponseSchema } from 
 import type {
   AccessToken,
   AccountId,
+  ItemAttributeSetMutation,
   ItemAttributeSetResponse,
   ItemAttributeSetsResponse,
   PaginationParams,
@@ -25,6 +26,23 @@ export const getItemAttributeSets = async ({
       params,
     },
     itemAttributeSetsResponseSchema,
+  );
+};
+
+/** Creates an item attribute set. `name` is required. */
+export const createItemAttributeSet = async ({
+  accessToken,
+  accountID,
+  ...itemAttributeSet
+}: AccessToken & AccountId & ItemAttributeSetMutation): Promise<ItemAttributeSetResponse> => {
+  return requestJson(
+    `Account/${accountID}/ItemAttributeSet.json`,
+    {
+      method: 'POST',
+      accessToken,
+      payload: itemAttributeSet,
+    },
+    itemAttributeSetResponseSchema,
   );
 };
 

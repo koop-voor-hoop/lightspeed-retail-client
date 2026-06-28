@@ -17,6 +17,7 @@ export * from './item.types';
 export * from './item_attribute_set.types';
 export * from './item_customfield.types';
 export * from './item_image.types';
+export * from './item_matrix.types';
 export * from './item_shop.types';
 export * from './locale.types';
 export * from './manufacturer.types';
