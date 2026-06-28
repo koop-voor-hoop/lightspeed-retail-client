@@ -2,7 +2,7 @@ import { requestJson } from '../api';
 import { inventoryLogsResponseSchema } from '../schemas';
 import type { AccessToken, AccountId, InventoryLogsResponse, PaginationParams } from '../types';
 
-type EndpointParams = PaginationParams<never, 'inventoryLogID' | 'itemID' | 'createTime'>;
+type EndpointParams = PaginationParams<never, 'inventoryLogID' | 'itemID'>;
 
 /** Lists inventory change logs with optional pagination and sorting. */
 export const getInventoryLogs = async ({

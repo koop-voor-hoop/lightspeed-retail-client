@@ -27,7 +27,7 @@ describe('inventory log read - Integration Tests', () => {
       accessToken: accessToken!,
       accountID: accountID!,
       limit: 10,
-      sort: '-createTime',
+      sort: '-inventoryLogID',
     });
 
     expect(response).toBeDefined();

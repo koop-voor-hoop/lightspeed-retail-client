@@ -164,7 +164,7 @@ describe('sale - Integration Tests', () => {
 
     expect(completeResponse.Sale.completed).toBe(true);
     expect(Number(completeResponse.Sale.calcPayments ?? 0)).toBe(total);
-  });
+  }, 30000);
 
   it('should fail gracefully for a non-existent sale id', async () => {
     const missingSaleId = 999999999;

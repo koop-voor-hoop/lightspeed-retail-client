@@ -14,7 +14,8 @@
     "typecheck": "tsc --noEmit",
     "scaffold": "bun run scaffold.ts",
     "check": "biome check",
-    "check:fix": "biome check --fix"
+    "check:fix": "biome check --fix",
+    "test:coverage": "bun test --coverage"
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.1",
