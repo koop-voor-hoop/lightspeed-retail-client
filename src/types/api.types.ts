@@ -47,6 +47,15 @@ export type PaginationParams<
         load_relations?: Relations<Relation>;
       });
 
+/**
+ * Field filters for list endpoints. A raw string or number value is an exact match;
+ * operator expressions (LIKE, IN, ...) are built with the helpers in `filters.ts`.
+ */
+export type FilterParams<Field extends string> = Partial<Record<Field, string | number>> & {
+  /** Matches records satisfying any of several field expressions; build with `or()` from `filters.ts`. */
+  or?: string;
+};
+
 export type CountParams = {
   /** Used to paginate forward to subsequent pages. Values come from response payloads and should not be set directly. */
   after?: never;

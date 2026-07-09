@@ -3,6 +3,7 @@ import { itemMatricesResponseSchema, itemMatrixResponseSchema } from '../schemas
 import type {
   AccessToken,
   AccountId,
+  FilterParams,
   ItemMatricesResponse,
   ItemMatrixMutation,
   ItemMatrixResponse,
@@ -21,7 +22,10 @@ type EndpointParams = PaginationParams<
   | 'TagRelations'
   | 'TagRelations.Tag',
   'itemMatrixID' | 'timeStamp' | 'description'
->;
+> &
+  FilterParams<'itemMatrixID' | 'description' | 'itemAttributeSetID' | 'categoryID' | 'manufacturerID'>;
+
+export type ItemMatrixListParams = EndpointParams;
 
 type RelationParams = Pick<EndpointParams, 'load_relations'>;
 

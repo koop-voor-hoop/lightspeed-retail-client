@@ -3,6 +3,7 @@ import { itemResponseSchema, itemsResponseSchema } from '../schemas';
 import type {
   AccessToken,
   AccountId,
+  FilterParams,
   ItemMutation,
   ItemResponse,
   ItemsResponse,
@@ -27,7 +28,21 @@ type EndpointParams = PaginationParams<
   | 'CustomFieldValues.value'
   | 'ItemPrices',
   'itemID' | 'timeStamp' | 'description'
->;
+> &
+  FilterParams<
+    | 'itemID'
+    | 'systemSku'
+    | 'customSku'
+    | 'upc'
+    | 'ean'
+    | 'manufacturerSku'
+    | 'description'
+    | 'itemMatrixID'
+    | 'categoryID'
+    | 'manufacturerID'
+  >;
+
+export type ItemListParams = EndpointParams;
 
 type RelationParams = Pick<EndpointParams, 'load_relations'>;
 
