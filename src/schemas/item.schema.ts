@@ -13,7 +13,7 @@ import { itemCustomFieldValueSchema } from './item_customfield.schema';
 import { itemImageSchema } from './item_image.schema';
 import { itemShopSchema, itemShopsInItemMutationSchema } from './item_shop.schema';
 import { manufacturerSchema } from './manufacturer.schema';
-import { tagSchema } from './tag.schema';
+import { tagSchema, tagsMutationSchema, tagsSchema } from './tag.schema';
 import { taxClassSchema } from './tax_class.schema';
 
 export const itemPriceSchema = z.object({
@@ -143,6 +143,7 @@ export const itemSchema = z.object({
   ItemVendorNums: itemVendorNumsSchema.optional(),
   ItemECommerce: itemECommercesSchema.optional(),
   TagRelations: itemTagRelationsSchema.optional(),
+  Tags: tagsSchema.optional(),
   CustomFieldValues: itemCustomFieldValuesSchema.optional(),
   ItemPrices: itemPricesSchema.optional(),
   Prices: itemPricesSchema.optional(),
@@ -193,4 +194,5 @@ export const itemMutationSchema = z.object({
   ItemComponents: itemComponentsSchema.optional(),
   ItemVendorNums: itemVendorNumsSchema.optional(),
   CustomFieldValues: itemCustomFieldValuesSchema.optional(),
+  Tags: tagsMutationSchema.optional(),
 });

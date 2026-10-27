@@ -18,6 +18,7 @@ describe('item read - Integration Tests', () => {
     'ItemECommerce',
     'TagRelations',
     'TagRelations.Tag',
+    'Tags',
     'CustomFieldValues',
     'CustomFieldValues.value',
     'ItemPrices',

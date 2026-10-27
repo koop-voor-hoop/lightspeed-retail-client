@@ -16,6 +16,7 @@ describe('item matrix read - Integration Tests', () => {
     'Season',
     'TagRelations',
     'TagRelations.Tag',
+    'Tags',
   ] as const;
 
   beforeAll(async () => {

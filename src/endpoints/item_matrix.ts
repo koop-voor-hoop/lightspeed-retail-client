@@ -20,10 +20,13 @@ type EndpointParams = PaginationParams<
   | 'Manufacturer'
   | 'Season'
   | 'TagRelations'
-  | 'TagRelations.Tag',
+  | 'TagRelations.Tag'
+  | 'Tags',
   'itemMatrixID' | 'timeStamp' | 'description'
 > &
-  FilterParams<'itemMatrixID' | 'description' | 'itemAttributeSetID' | 'categoryID' | 'manufacturerID'>;
+  FilterParams<
+    'itemMatrixID' | 'description' | 'itemAttributeSetID' | 'categoryID' | 'manufacturerID' | 'tag'
+  >;
 
 export type ItemMatrixListParams = EndpointParams;
 

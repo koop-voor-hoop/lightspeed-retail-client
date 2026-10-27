@@ -24,6 +24,7 @@ type EndpointParams = PaginationParams<
   | 'ItemECommerce'
   | 'TagRelations'
   | 'TagRelations.Tag'
+  | 'Tags'
   | 'CustomFieldValues'
   | 'CustomFieldValues.value'
   | 'ItemPrices',
@@ -40,6 +41,8 @@ type EndpointParams = PaginationParams<
     | 'itemMatrixID'
     | 'categoryID'
     | 'manufacturerID'
+    | 'publishToEcom'
+    | 'tag'
   >;
 
 export type ItemListParams = EndpointParams;

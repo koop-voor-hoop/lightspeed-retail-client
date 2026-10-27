@@ -11,6 +11,7 @@ import {
 import { itemImagesSchema, itemPricesSchema, itemSchema } from './item.schema';
 import { itemAttributeSetSchema } from './item_attribute_set.schema';
 import { manufacturerSchema } from './manufacturer.schema';
+import { tagsMutationSchema, tagsSchema } from './tag.schema';
 import { taxClassSchema } from './tax_class.schema';
 
 export const itemMatrixItemsSchema = z.object({
@@ -34,6 +35,7 @@ export const itemMatrixMutationSchema = z.object({
   seasonID: integerLikeSchema.optional(),
   defaultVendorID: integerLikeSchema.optional(),
   Prices: itemPricesSchema.optional(),
+  Tags: tagsMutationSchema.optional(),
 });
 
 export const itemMatrixSchema = z.object({
@@ -68,6 +70,7 @@ export const itemMatrixSchema = z.object({
   Images: itemImagesSchema.optional(),
   CustomFieldValues: unknownRelationSchema.optional(),
   TagRelations: unknownRelationSchema.optional(),
+  Tags: tagsSchema.optional(),
 });
 
 export const itemMatrixResponseSchema = z.object({
